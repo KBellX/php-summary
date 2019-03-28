@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+<h1>un_sample_request</h1>
+<br />
+Please open this file by b.com.
+It will ajax request a.com.
+
+</body>
+
+</html>
+
+<script>
+
+var url = "http://a.com/un_sample.php";
+
+var xhr = new XMLHttpRequest();
+
+xhr.withCredentials = true;
+
+xhr.onreadystatechange = function() 
+{
+    if (xhr.readyState==4 && xhr.status==200) {
+        console.log(xhr);      
+    }
+}
+xhr.open("GET", url, true);
+xhr.setRequestHeader("Content-type","application/json");    // 变成非简单请求
+xhr.send();
+
+
+</script>

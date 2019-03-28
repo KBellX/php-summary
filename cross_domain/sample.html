@@ -1,0 +1,34 @@
+<html>
+
+<head>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+<h1>sample_request</h1>
+<br />
+Please open this file by b.com.
+It will ajax request a.com.
+
+</body>
+
+</html>
+
+<script>
+
+var url = "http://a.com/sample.php";
+
+var xhr = new XMLHttpRequest();
+
+xhr.withCredentials = true;
+
+xhr.onreadystatechange = function() 
+{
+    if (xhr.readyState==4 && xhr.status==200) {
+        console.log(xhr);      
+    }
+}
+xhr.open("GET", url, true);
+xhr.send();
+
+</script>
